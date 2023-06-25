@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+*{
+    margin: 0px;
+    padding: 0%;
+    box-sizing: border-box;
+    font-family:'poppins',sans-serif;
+    cursor: pointer;
+    color: aliceblue;
+}
+.body{
+    height: 150vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    background:linear-gradient(to right,#3f5efb,#fc466b);
+}
+.form{
+    /* width: 100rem; */
+    /* height: 100rem; */
+    display: flex;
+    flex-direction: column;
+    background: rgba(255, 255, 255, 0.06);
+    box-shadow: 0 8px 32px 0 rgba(31, 38,135, .37);
+    /* text-align: center; */
+    align-items: center;
+    margin: 20px;
+    padding: 30px;
+    border-radius: 50px;
+
+}
+.form h1{
+    font-size: 40px;
+    
+}
+.form input{
+    font-size: 20px;
+    width: 100%;
+    border-radius:none;
+    margin-bottom: 5px;
+    color:#000;
+}
+/* .form button{
+    width:100px;
+    height:40px;
+    color:white;
+    font-weight: bold;
+    font-size: 20px;
+    padding: 5px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    border:none;
+    background: ;
+    
+}
+.form button:hover{
+    color:white;
+    background-color: rgb(37, 38, 40);
+    cursor: pointer;
+} */
+
+.form button {
+    padding: 0.6em 2em;
+    border: none;
+    outline: none;
+    color: rgb(255, 255, 255);
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+  }
+  
+  .form button:before {
+    content: "";
+    background: linear-gradient(
+      45deg,
+      #ff0000,
+      #ff7300,
+      #fffb00,
+      #48ff00,
+      #00ffd5,
+      #002bff,
+      #7a00ff,
+      #ff00c8,
+      #e0dddd
+    );
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowingbn5 20s linear infinite;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    border-radius: 10px;
+  }
+  
+  @keyframes glowingbn5 {
+    0% {
+      background-position: 0 0;
+    }
+    50% {
+      background-position: 400% 0;
+    }
+    100% {
+      background-position: 0 0;
+    }
+  }
+  
+  .form button:active {
+    color: #000;
+  }
+  
+  .form button:active:after {
+    background: transparent;
+  }
+  
+  .form button:hover:before {
+    opacity: 1;
+  }
+  
+  .form button:after {
+    z-index: -1;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #191919;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+  }
