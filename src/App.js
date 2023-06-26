@@ -7,6 +7,7 @@ import Login from './components/Login';
 import User2 from './components/User2';
 import User from './components/User';
 import Logout from './components/Logout';
+import Update from './components/Update';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
        <Route path='/User2' exact element={<User2/>}/>
        <Route path='/User' exact element={<User/>}/>
        <Route path='/logout' exact element={<Logout/>}/>
+       <Route path='/updateuser/:id' exact element={<Update/>}/>
        
        
  

@@ -1,7 +1,9 @@
 import React,{Component} from 'react';
 // import User from './User';
 import axios from 'axios';
-import { Navigate} from 'react-router-dom'
+import { Navigate,Link} from 'react-router-dom'
+// import Update from './Update';
+// import Logout from './Logout';
 class User2 extends Component{
 
     //constructor
@@ -29,6 +31,19 @@ componentDidMount(){
    
 
    }
+//    logout=()=>{
+//     axios.put("http://localhost:4000/logout",this.state).then((res)=>{
+        
+//         window.location.href='/login'   
+//         alert("you have been logout");
+//         console.log(res);
+        
+//     }).catch(function(err){
+//         console.log(err);
+//     })
+//    }
+
+
    deletedata=(userid)=>{
     axios.delete("http://localhost:4000/deleteuser/"+userid).then((res)=>{
         alert("delete successful")
@@ -46,6 +61,7 @@ componentDidMount(){
         }
         return(
             <>
+            {/* <button onClick={this.logout}>logout</button> */}
 
 {
     this.state.items.map((val)=>{
@@ -58,6 +74,8 @@ componentDidMount(){
             {val.userType}
             <img src={'http://localhost:4000/'+val.image} alt='loading'></img>
             <button onClick={this.deletedata.bind(this,val._id)}>deleteuser</button>
+            <Link to={"/updateuser/"+val._id}>update</Link>
+
             </>
             
         )
