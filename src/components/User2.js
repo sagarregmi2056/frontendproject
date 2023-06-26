@@ -13,12 +13,7 @@ class User2 extends Component{
     }
    } 
 
-   deletedata=(userid)=>{
-    axios.delete("http://localhost:4000/deleteuser/",userid.then(function(res){
-        alert("delete successful")
-        console.log(res);
-    }))
-}
+   
 //method
 componentDidMount(){
     axios.get('http://localhost:4000/userall',this.state.config).then((Response)=>{
@@ -34,17 +29,26 @@ componentDidMount(){
    
 
    }
+   deletedata=(userid)=>{
+    axios.delete("http://localhost:4000/deleteuser/"+userid).then((res)=>{
+        alert("delete successful")
+        console.log(res);
+    }).catch((err)=>{
+        console.log(err);
+    })
+
+}
 
 
     render(){
-        if(localStorage.getItem('userType')&&localStorage.getItem('userType')!=='user'){
+        if(localStorage.getItem('userType')&&localStorage.getItem('userType')!=='Admin'){
             return<Navigate to='/login'/>
         }
         return(
             <>
 
 {
-    this.state.items.map(function(val){
+    this.state.items.map((val)=>{
         return(
             <>
             
@@ -53,7 +57,7 @@ componentDidMount(){
             {val.password}
             {val.userType}
             <img src={'http://localhost:4000/'+val.image} alt='loading'></img>
-            <button onClick={this.deletedata(val._id)}>deleteuser</button>
+            <button onClick={this.deletedata.bind(this,val._id)}>deleteuser</button>
             </>
             
         )

@@ -27,11 +27,16 @@
     margin: 20px;
     padding: 30px;
     border-radius: 50px;
+    color:black;
 
 }
 .form h1{
     font-size: 40px;
+
     
+}
+form label{
+  color:black;
 }
 .form input{
     font-size: 20px;
